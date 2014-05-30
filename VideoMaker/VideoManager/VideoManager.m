@@ -18,13 +18,13 @@
     CVPixelBufferRef buffer;
     NSUInteger currentIndex;
     
-    BOOL isProcessCreating;
     dispatch_queue_t assetWriterQueue;
     int currentIndexForBuff;
     
     NSArray* imagesPathsForVideo;
     
     NSString* videoPath;
+    BOOL isProcessCreating;
 }
 @synthesize videoPath,isVideoCreating,delegate,isVideoCreationCompleted,isVideoCreationFailed,speed,videoSize;
 
@@ -171,12 +171,8 @@
             }
             if (image) {
                 buffer = [self pixelBufferFromCGImage:image.CGImage];
-                int32_t timeScale = ceil(speed*imagesPathsForVideo.count);
-                if (speed<1) {
-                    timeScale = ceil(1.0/speed);
-                }
-                CMTime presentTime= CMTimeMakeWithSeconds(speed*currentIndexForBuff, 33);
-                if (![adaptor appendPixelBuffer:buffer withPresentationTime:presentTime]) {
+                CMTime presentationTime= CMTimeMakeWithSeconds(speed*currentIndexForBuff, 33);
+                if (![adaptor appendPixelBuffer:buffer withPresentationTime:presentationTime]) {
                     [self finishVideo];
                     return;
                 }
