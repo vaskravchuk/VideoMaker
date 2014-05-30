@@ -132,7 +132,7 @@
     }
     return res;
 }
--(void)finisheVideo {
+-(void)finishVideo {
     [writerInput markAsFinished];
     AVAssetWriterStatus statusW = videoWriter.status;
     if (statusW == AVAssetWriterStatusWriting) {
@@ -177,14 +177,14 @@
                 }
                 CMTime presentTime= CMTimeMakeWithSeconds(speed*currentIndexForBuff, 33);
                 if (![adaptor appendPixelBuffer:buffer withPresentationTime:presentTime]) {
-                    [self finisheVideo];
+                    [self finishVideo];
                     return;
                 }
                 CVPixelBufferRelease(buffer);
                 if (currentIndexForBuff < imagesPathsForVideo.count) {
                 }
                 else {
-                    [self finisheVideo];
+                    [self finishVideo];
                 }
                 if ([self.delegate respondsToSelector:@selector(videoManager:ProgressChanged:)]) {
                     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -199,7 +199,7 @@
                 if (currentIndexForBuff < imagesPathsForVideo.count) {
                 }
                 else {
-                    [self finisheVideo];
+                    [self finishVideo];
                 }
                 if ([self.delegate respondsToSelector:@selector(videoManager:ProgressChanged:)]) {
                     dispatch_sync(dispatch_get_main_queue(), ^{
