@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>683CBA5A-BFDC-463A-A673-D3D7BBE3B9F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VideoMaker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D5426C7D-8186-4220-A3DE-84288ED9B5D9</key>
+		<string>https://github.com/vaskravchuk/VideoMaker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VideoMaker.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D5426C7D-8186-4220-A3DE-84288ED9B5D9</key>
+		<string>../..</string>
+		<key>DD8B3C55-2F5B-4787-A093-2F859E549A0E</key>
+		<string>../../VideoMaker</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vaskravchuk/VideoMaker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D5426C7D-8186-4220-A3DE-84288ED9B5D9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D5426C7D-8186-4220-A3DE-84288ED9B5D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VideoMaker</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD8B3C55-2F5B-4787-A093-2F859E549A0E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VideoMaker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

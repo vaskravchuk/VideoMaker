@@ -142,7 +142,6 @@
     }
     else {
         [videoWriter finishWritingWithCompletionHandler:^(){}];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"beginBackgroundTaskWithExpiration" object:nil];
         [self cancelVideoCreation];
     }
 }
