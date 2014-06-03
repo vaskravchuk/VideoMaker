@@ -27,25 +27,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="W1m-gl-yBR">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WXu-vZ-So8">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="nsI-dA-TS6"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="BMx-0K-0GW"/>
-                                </connections>
-                            </collectionView>
+                            <view contentMode="scaleToFill" id="JhO-R2-UAy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="GYk-qX-y1d">
                                 <rect key="frame" x="85" y="561" width="150" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="NwG-gZ-4S8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -57,8 +51,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="W1m-gl-yBR" id="TVm-vR-t0Y"/>
+                        <outlet property="createVideoButton" destination="aVZ-lC-KFY" id="Y2Y-gb-D41"/>
+                        <outlet property="mapView" destination="NwG-gZ-4S8" id="2Jv-bg-jJv"/>
                         <outlet property="progressBar" destination="GYk-qX-y1d" id="dK3-6V-37I"/>
+                        <outlet property="scrContainer" destination="JhO-R2-UAy" id="2RW-KI-15o"/>
                         <outlet property="view" destination="kh9-bI-dsS" id="uCb-7X-h1k"/>
                     </connections>
                 </viewController>
