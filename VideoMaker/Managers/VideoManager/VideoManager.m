@@ -7,7 +7,6 @@
 
 #import "VideoManager.h"
 #import <AVFoundation/AVFoundation.h>
-#import "BackgroundTaskManager.h"
 
 @implementation VideoManager {
     NSOperationQueue* operationQueue;
@@ -99,9 +98,7 @@
     [videoWriter startWriting];
     [videoWriter startSessionAtSourceTime:kCMTimeZero];
 }
--(void)startCreationVideo
-{
-    [[BackgroundTaskManager sharedBackgroundTaskManager] beginNewBackgroundTask];
+-(void)startCreationVideo {
     isVideoCreating = YES;
     @try {
         currentIndexForBuff = 0;

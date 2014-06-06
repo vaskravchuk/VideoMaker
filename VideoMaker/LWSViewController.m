@@ -14,7 +14,7 @@
 #import "PanoLoader.h"
 #import <AudioToolbox/AudioServices.h>
 #import "InfiniteImageScrollView.h"
-\
+#import "BackgroundTaskManager.h"
 
 @interface LWSViewController () <UIGestureRecognizerDelegate,VideoManagerDelegate,RouteManagerDelegate,PanoLoaderDelegate,InfiniteImageScrollViewDelegate> {
     __weak IBOutlet UIProgressView *progressBar;
@@ -50,15 +50,15 @@
     return [panoLoader.coordArr count]-1;
 }
 -(void)saveVideo {
+    //start generating video from screenshoots path that we created early
     [videoManager startCreationVideoForImages:imagesPathArr];
 }
 -(void)createScrForCurrentIndex {
     NSBlockOperation *operation = [[NSBlockOperation alloc] init];
-    __weak NSBlockOperation *operationWeak = operation;
     [operation addExecutionBlock:^{
         int oldIndex = streetImageView.imagesCurentIndex;
         @autoreleasepool {
-            UIImage *image = [self scrImageRef];
+            UIImage *image = [self scrImageRef]; // get screenshoot from streetImageView
             if (image)
             {
                 NSFileManager* fM = [NSFileManager defaultManager];
@@ -68,6 +68,7 @@
                     [fM createDirectoryAtPath:[NSTemporaryDirectory() stringByAppendingString:@"VideoScrCash"] withIntermediateDirectories:YES attributes:[NSDictionary dictionary] error:&err];
                 }
                 [imagesPathArr addObject:[NSTemporaryDirectory() stringByAppendingFormat:@"VideoScrCash/scrForVideo%d.png",streetImageView.imagesCurentIndex]];
+                //save screenshoot in tmp/VideoScrCash/scrForVideo%d.png folder
                 [UIImagePNGRepresentation(image) writeToFile:[imagesPathArr lastObject] atomically:YES];
             }
             double per = (double)streetImageView.imagesCurentIndex / (double)[self scenesCount];
@@ -76,11 +77,12 @@
             }];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^(){
                 [streetImageView nextScene];
+                // If all screenshoot created
                 if ([streetImageView isEndScene] && (oldIndex == streetImageView.imagesCurentIndex)) {
-                    [self saveVideo];
+                    [self saveVideo]; //End Geting screenhoots
                 }
                 else {
-                    [self createScrForCurrentIndex];
+                    [self createScrForCurrentIndex]; //Go To the nex pano scene for rotate it
                 }
             }];
         }
@@ -93,6 +95,8 @@
     }
     [streetImageView setImagesArrForAnimating:panoLoader.loadedImages];
     [imagesPathArr removeAllObjects];
+    
+    //Start Creating screnshoot from streetImageView for pano that rotated in the direction of motion
     [self createScrForCurrentIndex];
 }
 -(void)loaderProcess:(double)per withPanoPoint:(PanoPoint*)arg isFirstImages:(BOOL)fIArg {
@@ -131,6 +135,7 @@
 #pragma mark - open video
 
 - (IBAction)createVideo:(id)sender {
+    // UIVIew For create screenshots for video (rotate Pano in the direction of motion
     if (!streetImageView) {
         streetImageView = [[InfiniteImageScrollView alloc] initWithFrame:CGRectMake(0, 0, scrContainer.bounds.size.width, scrContainer.bounds.size.height)];
         [scrContainer insertSubview:streetImageView atIndex:0];
@@ -138,6 +143,9 @@
     }
     [self showProgressBar];
     
+    [[BackgroundTaskManager sharedBackgroundTaskManager] beginNewBackgroundTask];
+    
+    //Start loading pano images
     [panoLoader loadForCoordinatesArray:routeManager.routePoints];
     
     [self.view.window setUserInteractionEnabled:NO];
@@ -175,7 +183,7 @@
     return needAddedNewPoint;
 }
 -(void)addPointToRouteAtCoordinates:(CLLocationCoordinate2D)coord {
-    [routeManager addRoutePointToLocation:coord];
+    [routeManager addRoutePointToLocation:coord]; // add point to create route on the map
 }
 -(void)taptapGestureRecognizer:(UIGestureRecognizer*)sender {
     if (sender.state == UIGestureRecognizerStateEnded){
@@ -209,6 +217,7 @@
     videoManager.delegate = self;
     videoManager.speed = 1.0/10.0;
     
+    // Need for multiplyDelegation for use map's event in different parts of the code
     mapViewMultiplyDelegate = [[LWSMapViewMultiplyDelegate alloc] init];
     mapViewMultiplyDelegate.map = mapView;
     [mapViewMultiplyDelegate setMapViewDelegate:self];

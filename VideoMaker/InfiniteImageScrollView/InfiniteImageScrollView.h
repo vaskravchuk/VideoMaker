@@ -11,6 +11,7 @@
 
 @protocol InfiniteImageScrollViewDelegate <NSObject>
 
+@optional
 -(void)newAnimationPositionsForPanoPoint:(PanoPoint*)panoPointArg;
 
 @end
