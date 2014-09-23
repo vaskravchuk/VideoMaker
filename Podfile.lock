@@ -1,27 +1,61 @@
 PODS:
-  - AFNetworking (2.2.4):
+  - AFNetworking (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.2.4):
+  - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.2.4):
-    - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.2.4)
-  - AFNetworking/Security (2.2.4)
-  - AFNetworking/Serialization (2.2.4)
-  - AFNetworking/UIKit (2.2.4):
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Google-Maps-iOS-SDK (1.8.1)
-  - SDWebImage (3.6):
+  - libwebp (0.4.1):
+    - libwebp/dec
+    - libwebp/demux
+    - libwebp/dsp
+    - libwebp/enc
+    - libwebp/mux
+    - libwebp/utils
+    - libwebp/webp
+  - libwebp/dec (0.4.1):
+    - libwebp/enc
+    - libwebp/utils
+  - libwebp/demux (0.4.1):
+    - libwebp/utils
+  - libwebp/dsp (0.4.1):
+    - libwebp/dec
+    - libwebp/enc
+    - libwebp/utils
+  - libwebp/enc (0.4.1):
+    - libwebp/utils
+  - libwebp/mux (0.4.1):
+    - libwebp/utils
+  - libwebp/utils (0.4.1):
+    - libwebp/dsp
+    - libwebp/webp
+  - libwebp/webp (0.4.1)
+  - SDWebImage (3.7.1):
     - SDWebImage/Core
-  - SDWebImage/Core (3.6)
+    - SDWebImage/MapKit
+    - SDWebImage/WebP
+  - SDWebImage/Core (3.7.1)
+  - SDWebImage/MapKit (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/WebP (3.7.1):
+    - libwebp
+    - SDWebImage/Core
 
 DEPENDENCIES:
   - AFNetworking
@@ -29,8 +63,9 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC CHECKSUMS:
-  AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
-  Google-Maps-iOS-SDK: 542561448224b92d790483674b7313b13764e624
-  SDWebImage: c6989652c1cdf27cbdf3f56957e2030f825af5bc
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  Google-Maps-iOS-SDK: 4fe35d952dbd1e4dacfcfa178e9cce2f06d67ecc
+  libwebp: 88e6e172a01df354b0a78400d2e5b87a9f2796cb
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
 
 COCOAPODS: 0.32.1

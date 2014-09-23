@@ -38,6 +38,7 @@
 
 @implementation LWSViewController
 
+#pragma mark - PanoLoaderDelegate
 -(UIImage*)scrImageRef {
     UIGraphicsBeginImageContextWithOptions([scrContainer frame].size, YES, 2);
     [[scrContainer layer] renderInContext:UIGraphicsGetCurrentContext()];
@@ -102,6 +103,7 @@
 -(void)loaderProcess:(double)per withPanoPoint:(PanoPoint*)arg isFirstImages:(BOOL)fIArg {
     progressBar.progress = per;
 }
+
 #pragma mark - progres bar
 
 -(void)showProgressBar {

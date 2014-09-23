@@ -1,8 +1,9 @@
 //
-//  IQProjectVideo
+//  VideoManager.h
+//  GoogleStreetViewVideoTest
 //
-//  Created by Iftekhar Mac Pro on 9/26/13.
-//  Copyright (c) 2013 Iftekhar. All rights reserved.
+//  Created by Василий Кравчук on 05.12.13.
+//  Copyright (c) 2013 lws. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

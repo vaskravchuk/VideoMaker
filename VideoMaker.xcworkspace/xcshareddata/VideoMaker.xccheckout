@@ -10,29 +10,29 @@
 	<string>VideoMaker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7A953353-595A-4D83-B57B-54F5FD7ABADD</key>
+		<key>B36935986967644F99D51104D59790F075DF6612</key>
 		<string>https://github.com/vaskravchuk/VideoMaker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>VideoMaker.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7A953353-595A-4D83-B57B-54F5FD7ABADD</key>
+		<key>B36935986967644F99D51104D59790F075DF6612</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vaskravchuk/VideoMaker.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7A953353-595A-4D83-B57B-54F5FD7ABADD</string>
+	<string>B36935986967644F99D51104D59790F075DF6612</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7A953353-595A-4D83-B57B-54F5FD7ABADD</string>
+			<string>B36935986967644F99D51104D59790F075DF6612</string>
 			<key>IDESourceControlWCCName</key>
 			<string>VideoMaker</string>
 		</dict>
